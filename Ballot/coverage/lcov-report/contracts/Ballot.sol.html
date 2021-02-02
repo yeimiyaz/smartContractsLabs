@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for contracts\Ballot.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">contracts/</a> Ballot.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>25/25</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">57.14% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>8/14</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>7/7</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>27/27</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// SPDX-License-Identifier: MIT
+&nbsp;
+pragma solidity ^0.7.1;
+&nbsp;
+contract Ballot {
+    
+    struct Voter {
+      uint weight;
+      bool voted;
+      uint vote;
+    }
+    
+    struct Proposal{
+        uint voteCount;
+    }
+    
+    address public chairperson; // Ethereum address is 20 bytes long = 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4
+    mapping(address =&gt; Voter) public voters;
+    // {
+    //     "0xabcd.1234" =&gt; {weight,voted,vote},
+    //     "0xab12..def2" =&gt; {weight, voted,vote}
+    // }
+    // syntax for mapping and it is used to represent JSON structure in solidity
+    // mapping( keyType =&gt; valueType ) public variable_name ;
+    Proposal[] public proposals; 
+    
+    enum Phase {Init, Regs, Vote, Done}
+    // it can take only 0,1,2,3 values:
+    
+    Phase public state = Phase.Done;
+    
+    constructor (uint numProposals) {
+        chairperson = msg.sender;
+        voters[chairperson].weight = 2;
+        for(uint prop = 0 ; prop &lt; numProposals ; prop++){
+            // Proposal memory p;
+            // p.voteCount = 0;
+            // OR
+            // Proposal memory p = Proposal(0);
+            // proposals.push(p);
+            // OR
+            proposals.push(Proposal(0));
+        }
+        state = Phase.Regs;
+    }
+    
+    modifier onlyChair() {
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(msg.sender  == chairperson,"!chairperson");
+        _;
+    }
+    
+    modifier validPhase(Phase reqPhase) {
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(state == reqPhase);
+        _;
+    }
+    
+    function changeState(Phase x) public onlyChair {
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(x &gt; state);
+        state = x;
+    }
+    
+    function register(address voter) public validPhase(Phase.Regs) onlyChair {
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(voters[voter].voted == false);
+        voters[voter].weight = 1;
+    }
+    
+    function vote(uint toProposal) public validPhase(Phase.Vote) {
+        Voter memory sender = voters[msg.sender];
+        
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(sender.voted == false);
+        
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(toProposal &lt; proposals.length);
+        
+        voters[msg.sender].voted = true;
+        voters[msg.sender].vote = toProposal;
+        proposals[toProposal].voteCount += sender.weight;
+    }
+    
+    function reqWinner() public validPhase(Phase.Done) view returns(uint) {
+        uint winningVoteCount = 0;
+        uint winningProposal = 0;
+        for(uint prop = 0 ; prop &lt; proposals.length ; prop++){
+            if(proposals[prop].voteCount &gt; winningVoteCount) {
+                winningVoteCount = proposals[prop].voteCount;
+                winningProposal = prop;
+            }
+        }
+        assert(winningVoteCount &gt;= 3);
+        return winningProposal;
+    }
+}
+&nbsp;
+/*
+Truffle Develop started at http://127.0.0.1:9545/
+&nbsp;
+Accounts:
+(0) 0x2f70ea70106d69937001874832520a8df93ee303 -&gt; chairPerson
+(1) 0x3c735fb21647def65e25dee6d9ed7da92a22de0b -&gt; voter1
+(2) 0x1c7d9b8ce21de77fe7db2d9efe4f3b5a9aba6ec0 -&gt; voter2
+(3) 0xfc2579d08a85ae54a06b85d7bf36ae09832cebf6 -&gt; voter3
+(4) 0xa3e3d0565b19af992b316078f1b5ef5e698c922a -&gt; voter4
+(5) 0x6732441922435e9c2b9a61afd2148f8cd86a7bde -&gt; voter5
+(6) 0x5d1d6d9c1950396c9fe55adaf4bc41dae5598d64
+(7) 0x2fe8dbafefc412c748068ddb795610b5d9b7bbc6
+(8) 0xae8385bde6e265bb42aed5b3586eb395562b79dd
+(9) 0x00616bd512960d330452be84e596c7101aaf417e
+&nbsp;
+Private Keys:
+(0) 4500acd6a46064e40c8d9ede1c638e8af325a3b48209da76125481b5d0afd492
+(1) ed601a76c151dc01fe4665e5c301c820d923bf0f4e017b8ea1109b6663cdc3a4
+(2) e272fd26e83f62fb21ae547e2289967f8610f6a53949e92d54a736b0203b2fc2
+(3) 8a216674f6d1a8d20965a687b7ab5bafb9dfe71a83263eea56a7b1ed56cdd640
+(4) d6ab690d230a333b66b19d74ed85cdabd48c7d5a7a4b1f928c903342177944f6
+(5) 16e611487eebbb00088461b0bd0cd7bf3fedf201412e2366dcc587862c7e4089
+(6) c6fec41e6c5ef90b76891d464e03345b86918bfb116619c66d1e9a0e60e99c8d
+(7) 5a27d6e65029039c4ad41b4de44b83f6801de908ee9c20930fee93e65dc40be4
+(8) 82ccc48fffdec97041ade45f5fc6623a2d0bdb458aa8109c8046e1d13f8e5922
+(9) 35de83860f5d0e9b1090c91f7ef07e999a557414705ec09ada7fcb8412b00348
+&nbsp;
+Mnemonic: initial twice resource cage pride session uniform fortune pet labor pave gloom
+&nbsp;
+*/</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Jan 29 2021 14:52:07 GMT-0500 (Eastern Standard Time)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>
